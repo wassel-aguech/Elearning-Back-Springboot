@@ -22,14 +22,17 @@ public class MatiereController {
     public List<MatiereDto> findAll() {
         return matiereService.findAll();
     }
+
     @GetMapping("/getbyid/{id}")
     public MatiereDto findById(@PathVariable("id")  Long id) {
         return matiereService.findById(id);
     }
+
     @PostMapping("/save")
     public MatiereDto save(@RequestBody   MatiereDto request) {
         return matiereService.save(request);
     }
+
     @DeleteMapping("/delete/{id}")
     public void deleteById(@PathVariable("id")    Long id) {
         matiereService.deleteById(id);
@@ -39,7 +42,6 @@ public class MatiereController {
     public List<MatiereDto> findbyobjet(@PathVariable("kye")   String kye) {
         return matiereService.findbyobjet(kye);
     }
-
     public List<MatiereDto> findDate(Date start, Date end) {
         return matiereService.findDate(start, end);
     }

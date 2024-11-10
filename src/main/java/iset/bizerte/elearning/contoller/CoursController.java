@@ -74,10 +74,8 @@ public class CoursController {
     public List<CoursDto> listcoursbyidniveauetidmatiere(@PathVariable("idmatiere")   Long idmatiere, @PathVariable("idniveau") Long idniveau) {
         return coursService.listcoursbyidniveauetidmatiere(idmatiere, idniveau);
     }
+
     @PostMapping(path = "/uploadFile/{IdCoursDto}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-
-
-
     //@PostMapping("/uploadFile/{IdCoursDto}")
     public CoursDto uploadImageCoursDto(@PathVariable("IdCoursDto") Long IdCoursDto, @RequestParam MultipartFile image ,@RequestParam   MultipartFile file ) {
         return coursService.uploadcoursfile(IdCoursDto, image , file);
@@ -88,15 +86,11 @@ public class CoursController {
         return this.imageStorage.downloadUserImage(imageName, request);
     }
 
-
-
+    
     @GetMapping("/downloadcourspdffile/{imageName}")
     public ResponseEntity<Resource> downloadfile(@PathVariable String imageName, HttpServletRequest request) {
         return this.imageStorage.downloadUserImage(imageName, request);
     }
-
-
-
 
 
     public CoursDto uploadcoursfile(Long Idcours, MultipartFile image, MultipartFile file) {

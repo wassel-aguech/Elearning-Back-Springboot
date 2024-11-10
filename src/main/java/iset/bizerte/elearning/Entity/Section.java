@@ -30,6 +30,7 @@ public class Section extends AbstractEntity{
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "cours_id")
     private Cours cours;
+
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "section", cascade = CascadeType.ALL)
     private Set<Seance> seances = new HashSet<>();
 }

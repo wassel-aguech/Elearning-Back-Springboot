@@ -10,8 +10,6 @@ import java.util.List;
 public interface SectionService {
 
 
-
-
     List<SectionDto> findAll();
     SectionDto findById(Long id);
     SectionDto save(SectionDto   request);

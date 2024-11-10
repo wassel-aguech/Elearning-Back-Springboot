@@ -18,10 +18,12 @@ import java.util.Set;
 @NoArgsConstructor
 @SuperBuilder
 public class Matiere extends AbstractEntity{
+
     private String libelle;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "matieres", cascade = CascadeType.ALL)
     private Set<Cours> cours = new HashSet<>();
+
     @ManyToMany(fetch = FetchType.LAZY, mappedBy = "matieres", cascade = CascadeType.ALL)
     private Set<Niveau> niveaux = new HashSet<>();
 

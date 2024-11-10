@@ -33,7 +33,6 @@ public class CoursDto {
 
 
     public static Cours ToEntity(CoursDto cours) {
-
         return Cours.builder()
                 .titre(cours.getTitre())
                 .estouverte(cours.isEstouverte())
@@ -41,21 +40,11 @@ public class CoursDto {
                 .description(cours.getDescription())
                 .urlcours(cours.getUrlcours())
                 .prix(cours.getPrix())
-
                 .build();
-
-
-
-
     }
 
 
-
-
-
-
     public static CoursDto FromEntity(Cours cours) {
-
         return CoursDto.builder()
                 .titre(cours.getTitre())
                 .estouverte(cours.isEstouverte())
@@ -63,18 +52,6 @@ public class CoursDto {
                 .description(cours.getDescription())
                 .urlcours(cours.getUrlcours())
                 .prix(cours.getPrix())
-
                 .build();
-
-
-
-
     }
-
-
-
-
-
-
-
 }

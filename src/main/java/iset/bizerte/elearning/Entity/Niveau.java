@@ -24,12 +24,12 @@ import java.util.Set;
 @SuperBuilder
 public class Niveau extends AbstractEntity {
     private String niveaustudent;
-
     private String orientation;
 
     //mappedBy = "niveau",
     @ManyToMany(fetch = FetchType.LAZY,  cascade = CascadeType.ALL)
     private List<Matiere> matieres = new ArrayList<>();
+
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "niveau", cascade = CascadeType.ALL)
     private List<Cours> cours = new ArrayList<>();
 }

@@ -20,6 +20,7 @@ import java.util.Set;
 @DiscriminatorValue("Admin")
 
 public class Administrateur extends User{
+
     private boolean isadmine;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "administrateur", cascade = CascadeType.ALL)

@@ -30,12 +30,12 @@ public class UserController {
         return service.fetchUser(email);
     }
     //send mail for email verification
+
     @PostMapping("/resetrequestpassword/{email}")
     public ResponseEntity<String> verifyEmail(@PathVariable String email){
-
-
         return passwordResetTokenService.verifyEmail(email);
     }
+
     @PostMapping("/verifyOtp/{otp}/{email}")
     public ResponseEntity<String> verifyOtp(@PathVariable Integer otp,@PathVariable String email){
         return passwordResetTokenService.verifyOtp(otp, email);

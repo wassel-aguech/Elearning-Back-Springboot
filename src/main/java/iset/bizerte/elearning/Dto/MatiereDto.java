@@ -19,47 +19,18 @@ public class MatiereDto {
     private String libelle;
 
 
-
-
-
     public static Matiere toEntity(MatiereDto matiere) {
-
         return Matiere.builder()
                 .libelle(matiere.getLibelle())
                 .id(matiere.getId())
                 .build();
-
-
-
-
-
-
-
-
     }
 
-
-
-
-
     public static MatiereDto FromEntity(Matiere matiere) {
-
         return MatiereDto.builder()
                 .libelle(matiere.getLibelle())
-
                 .id(matiere.getId())
-
-
-
                 .build();
-
-
-
-
-
-
-
-
     }
 
 

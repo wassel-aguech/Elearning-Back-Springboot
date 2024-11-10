@@ -35,7 +35,6 @@ public class NiveauController {
     }
 
     @GetMapping("/getbyid/{id}")
-
     public NiveauDto findById(@PathVariable("id") Long id) {
         return niveauService.findById(id);
     }
@@ -63,7 +62,6 @@ public class NiveauController {
     public List<NiveauDto> findbyobjet(@PathVariable("kye")  String kye) {
         return niveauService.findbyobjet(kye);
     }
-
     public List<NiveauDto> findDate(Date start, Date end) {
         return niveauService.findDate(start, end);
     }

@@ -17,33 +17,17 @@ public class TagDto {
 
 
     public static Tag_ toEntity(TagDto tag) {
-
         return  Tag_.builder()
-
                 .libelle(tag.getLibelle())
                 .deleted(tag.getDeleted())
-
                 .build();
-
-
-
-
     }
 
-
-
     public static TagDto FromEntity(Tag_ tag) {
-
         return  TagDto.builder()
-
                 .libelle(tag.getLibelle())
                 .deleted(tag.getDeleted())
-
                 .build();
-
-
-
-
     }
 
 

@@ -14,6 +14,7 @@ public class EtudiantDto  extends RegisterRequeste {
 
     private String classe ;
     private String section ;
+
     public static Etudiant toEntity(EtudiantDto request) {
         return  Etudiant.builder()
                 .id(request.getId())

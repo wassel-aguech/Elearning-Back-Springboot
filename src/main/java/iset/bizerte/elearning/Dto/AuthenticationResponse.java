@@ -10,8 +10,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class AuthenticationResponse {
+
     @JsonProperty("accessToken")
     private String accessToken;
+
     @JsonProperty("refreshToken")
     private String refreshToken;
 }

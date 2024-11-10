@@ -24,6 +24,7 @@ import lombok.Data;
 @SuperBuilder
 
 public class AbstractEntity implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;

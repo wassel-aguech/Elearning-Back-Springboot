@@ -19,13 +19,13 @@ import java.util.List;
 
 public class Panier extends  AbstractEntity{
 
-
-
     private String nom;
     private Double prix;
     private int quantite;
+
     @ManyToOne
     private Etudiant etudiant;
+
     @ManyToMany (fetch = FetchType.LAZY )
     private List<Cours> cours  = new ArrayList<>();
 

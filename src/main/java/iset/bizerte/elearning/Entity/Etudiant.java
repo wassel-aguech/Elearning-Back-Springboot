@@ -28,7 +28,6 @@ public class Etudiant extends User {
     private Parent parent ;
 
     @ManyToMany(fetch = FetchType.LAZY)
-
     private List<Cours> cours = new ArrayList<>();
 
     @OneToMany(fetch = FetchType.LAZY , mappedBy = "etudiant")

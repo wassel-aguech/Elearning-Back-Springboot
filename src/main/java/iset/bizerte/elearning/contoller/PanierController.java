@@ -16,14 +16,17 @@ import java.util.List;
 public class PanierController {
 
     private final PanierService panierService;
+
     @GetMapping("/listall")
     public List<PanierDto> findAll() {
         return panierService.findAll();
     }
+
     @GetMapping("/getbyid/{id}")
     public PanierDto findById(@PathVariable("id")  Long id) {
         return panierService.findById(id);
     }
+
     @PostMapping("/save")
     public PanierDto save(@RequestBody     PanierDto request) {
         return panierService.save(request);
@@ -38,7 +41,6 @@ public class PanierController {
     public List<PanierDto> findbyobjet(@PathVariable("kye")   String kye) {
         return panierService.findbyobjet(kye);
     }
-
     public List<PanierDto> findDate(Date start, Date end) {
         return panierService.findDate(start, end);
     }

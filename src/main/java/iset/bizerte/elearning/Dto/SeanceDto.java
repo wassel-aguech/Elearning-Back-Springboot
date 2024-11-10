@@ -23,29 +23,18 @@ public class SeanceDto {
 
 
     public static Seance toEntity(SeanceDto seance) {
-
-
         return Seance.builder()
                 .titre(seance.titre)
                 .urlvideo(seance.urlvideo)
                 .build();
-
-
-
-
-
     }
 
-
     public static SeanceDto FromEntity(Seance seance) {
-
-
         return SeanceDto.builder()
                 .titre(seance.getTitre())
                 .urlvideo(seance.getUrlvideo())
                 //.idsection(seance.getSection().getId())
                 .build();
-
 
     }
 

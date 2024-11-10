@@ -24,7 +24,6 @@ public class Seance extends AbstractEntity{
     @JoinColumn(name = "section_id")
     private Section section;
 
-
     @OneToMany(mappedBy = "seance", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<Support> supports = new HashSet<>();
 

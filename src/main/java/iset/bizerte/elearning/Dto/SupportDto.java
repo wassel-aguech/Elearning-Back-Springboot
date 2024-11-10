@@ -22,14 +22,11 @@ public class SupportDto {
 
 
     public static Support toEntity(SupportDto support) {
-
-
         return Support.builder()
                 .deleted(support.getDeleted())
                 .ordre(support.getOrdre())
                 .name(support.getName())
                 .paragraph(support.getParagraph())
-
                 .build();
 
     }
@@ -40,14 +37,10 @@ public class SupportDto {
 
 
     public static SupportDto FromEntity(Support support) {
-
-
         return SupportDto.builder()
-
                 .ordre(support.getOrdre())
                 .name(support.getName())
                 .paragraph(support.getParagraph())
-
                 .build();
 
     }

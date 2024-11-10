@@ -24,42 +24,23 @@ public class PanierDto {
     private Long idstudent;
 
 
-
     public static Panier ToEntity(PanierDto request){
-
         return Panier.builder()
                 .id(request.getId())
                 .nom(request.getNom())
                 .prix(request.getPrix())
                 .quantite(request.getQuantite())
-
-
-
-
-
                 .build();
-
-
-
     }
 
 
     public static PanierDto FromEntity(Panier request){
-
         return PanierDto.builder()
                 .id(request.getId())
                 .nom(request.getNom())
                 .prix(request.getPrix())
                 .quantite(request.getQuantite())
-
-
-
-
-
                 .build();
-
-
-
     }
 
 

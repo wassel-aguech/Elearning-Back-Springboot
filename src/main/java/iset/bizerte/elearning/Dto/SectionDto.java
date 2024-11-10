@@ -21,33 +21,20 @@ public class SectionDto {
 
 
     public static Section toEntity(SectionDto sectionDto) {
-
         return Section.builder()
                 .titre(sectionDto.getTitre())
                 .ordre(sectionDto.getOrdre())
                 .discription(sectionDto.getDiscription())
-
                 .build();
-
     }
 
-
     public static SectionDto FromEntity(Section sectionDto) {
-
         return SectionDto.builder()
                 .titre(sectionDto.getTitre())
                 .ordre(sectionDto.getOrdre())
                 .discription(sectionDto.getDiscription())
                 .idcours(sectionDto.getCours().getId())
-
-
-
-
-                .build();
-
-
-
-
+                                .build();
 
     }
 

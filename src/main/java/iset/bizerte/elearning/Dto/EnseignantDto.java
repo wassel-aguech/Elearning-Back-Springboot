@@ -13,6 +13,8 @@ import lombok.experimental.SuperBuilder;
 public class EnseignantDto extends RegisterRequeste {
     private String diplome;
     private String biographie;
+
+
     public static Enseignant toEntity(EnseignantDto request) {
         return Enseignant.builder()
                 .id(request.getId())
