@@ -17,6 +17,9 @@ public interface MatiereService {
     List<MatiereDto > findDate(Date start, Date end);
 
 
+    List<MatiereDto > listMatiereByEnsegnantId(Long id);
+
+
 
 
 

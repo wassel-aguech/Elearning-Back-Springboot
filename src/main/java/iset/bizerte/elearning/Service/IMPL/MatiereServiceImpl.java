@@ -2,8 +2,10 @@ package iset.bizerte.elearning.Service.IMPL;
 
 import iset.bizerte.elearning.Dto.MatiereDto;
 import iset.bizerte.elearning.Dto.NiveauDto;
+import iset.bizerte.elearning.Entity.Enseignant;
 import iset.bizerte.elearning.Entity.Matiere;
 import iset.bizerte.elearning.Entity.Niveau;
+import iset.bizerte.elearning.Repository.EnseignantRepository;
 import iset.bizerte.elearning.Repository.MatiereRepository;
 import iset.bizerte.elearning.Repository.NiveauRepository;
 import iset.bizerte.elearning.Service.MatiereService;
@@ -20,6 +22,7 @@ import java.util.stream.Collectors;
 public class MatiereServiceImpl implements MatiereService {
 
     private final MatiereRepository matiereRepository;
+    private final EnseignantRepository enseignantRepository;
 
 
     @Override
@@ -46,7 +49,12 @@ public class MatiereServiceImpl implements MatiereService {
 
     @Override
     public MatiereDto save(MatiereDto request) {
+
+        Optional<Enseignant> optionalEnseignant = enseignantRepository.findById(request.getIdensegnant());
+        optionalEnseignant.orElseThrow(() -> new RuntimeException("Cours not found with id: " + request.getIdensegnant()));
+
         Matiere matiere=MatiereDto.toEntity(request);
+        matiere.setEnseignant(optionalEnseignant.get());
         Matiere matiereSaved=matiereRepository.save(matiere);
         return MatiereDto.FromEntity(matiereSaved);
     }
@@ -77,4 +85,14 @@ public class MatiereServiceImpl implements MatiereService {
     public List<MatiereDto> findDate(Date start, Date end) {
         return List.of();
     }
+
+    @Override
+    public List<MatiereDto> listMatiereByEnsegnantId(Long id) {
+        return matiereRepository.listMatiereByEnsegnantId(id)
+                .stream()
+                .map(MatiereDto::FromEntity)
+                .collect(Collectors.toList());
+    }
+
+
 }

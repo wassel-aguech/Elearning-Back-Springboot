@@ -15,7 +15,6 @@ import java.util.List;
 
 public class MatiereController {
 
-
     private final MatiereService matiereService;
 
     @GetMapping("/listall")
@@ -45,4 +44,11 @@ public class MatiereController {
     public List<MatiereDto> findDate(Date start, Date end) {
         return matiereService.findDate(start, end);
     }
+
+
+    @GetMapping("/getMatiereByIdEns/{id}")
+    public List<MatiereDto> listMatiereByEnsegnantId(@PathVariable Long id) {
+        return matiereService.listMatiereByEnsegnantId(id);
+    }
+
 }

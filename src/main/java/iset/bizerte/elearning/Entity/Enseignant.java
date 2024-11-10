@@ -7,6 +7,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
 @Getter
 @Setter
@@ -22,5 +25,9 @@ public class Enseignant extends User{
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Administrateur administrateur  ;
+
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "enseignant", cascade = CascadeType.ALL)
+    private Set<Matiere> matieres = new HashSet<>();
 
 }

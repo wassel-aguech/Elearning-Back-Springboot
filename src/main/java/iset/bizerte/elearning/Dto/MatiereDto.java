@@ -18,6 +18,8 @@ public class MatiereDto {
     private Long id;
     private String libelle;
 
+    private Long idensegnant;
+
 
     public static Matiere toEntity(MatiereDto matiere) {
         return Matiere.builder()

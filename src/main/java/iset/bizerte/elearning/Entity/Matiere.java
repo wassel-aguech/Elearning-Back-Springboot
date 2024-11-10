@@ -27,7 +27,8 @@ public class Matiere extends AbstractEntity{
     @ManyToMany(fetch = FetchType.LAZY, mappedBy = "matieres", cascade = CascadeType.ALL)
     private Set<Niveau> niveaux = new HashSet<>();
 
-
+  @ManyToOne(fetch = FetchType.LAZY)
+    private Enseignant enseignant;
 
 
 

@@ -15,4 +15,8 @@ public interface MatiereRepository extends JpaRepository<Matiere, Long> {
     @Query("SELECT m FROM Matiere  m WHERE m.libelle LIKE %?1%")
     List<Matiere> searchByObjetStartsWith(String kye);
 
+
+    @Query("SELECT m FROM Matiere   m WHERE m.enseignant.id  = ?1")
+    List<Matiere> listMatiereByEnsegnantId(Long kye);
+
 }
