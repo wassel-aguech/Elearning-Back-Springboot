@@ -15,6 +15,8 @@ public class TagDto {
     private String libelle;
     private Boolean deleted;
 
+   // private  Long idcours;
+
 
     public static Tag_ toEntity(TagDto tag) {
         return  Tag_.builder()

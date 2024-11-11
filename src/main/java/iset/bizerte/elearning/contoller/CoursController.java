@@ -44,7 +44,7 @@ public class CoursController {
     }
 
     @PostMapping("/save")
-    public CoursDto save(@RequestBody CoursDto request) {
+    public CoursDto save(@RequestBody CoursDto  request) {
         return coursService.save(request);
     }
 
@@ -76,8 +76,10 @@ public class CoursController {
     }
 
     @PostMapping(path = "/uploadFile/{IdCoursDto}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    //@PostMapping("/uploadFile/{IdCoursDto}")
-    public CoursDto uploadImageCoursDto(@PathVariable("IdCoursDto") Long IdCoursDto, @RequestParam MultipartFile image ,@RequestParam   MultipartFile file ) {
+   // @PostMapping( "/uploadFile/{IdCoursDto}")
+    public CoursDto uploadImageCoursDto(@PathVariable("IdCoursDto") Long IdCoursDto,
+                                        @RequestParam MultipartFile image ,
+                                         @RequestParam MultipartFile file ) {
         return coursService.uploadcoursfile(IdCoursDto, image , file);
     }
 

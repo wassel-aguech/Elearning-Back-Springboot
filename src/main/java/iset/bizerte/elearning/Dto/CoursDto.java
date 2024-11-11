@@ -46,6 +46,7 @@ public class CoursDto {
 
     public static CoursDto FromEntity(Cours cours) {
         return CoursDto.builder()
+                .id(cours.getId())
                 .titre(cours.getTitre())
                 .estouverte(cours.isEstouverte())
                 .urlimage(cours.getUrlimage())

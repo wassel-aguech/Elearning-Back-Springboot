@@ -7,6 +7,7 @@ import iset.bizerte.elearning.Entity.*;
 import iset.bizerte.elearning.Repository.*;
 import iset.bizerte.elearning.Service.CoursService;
 import iset.bizerte.elearning.configimageandfile.ImageStorage;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -54,14 +55,26 @@ private final CoursRepository coursRepository;
     @Override
     public CoursDto save(CoursDto request) {
         Cours cours = CoursDto.ToEntity(request);
-        Optional<Matiere> matierefound = matiereRepository.findById(request.getIdmatiere());
-        Optional<Niveau> niveaufound = niveauRepository.findById(request.getIdniveau());
-        Optional<Enseignant> Enseignantfound = enseignantRepository.findById(request.getIdenseignant());
+       // Optional<Matiere> matierefound = matiereRepository.findById(request.getIdmatiere());
 
-        if (matierefound.isPresent() && niveaufound.isPresent() && Enseignantfound.isPresent()) {
-            cours.setMatieres(matierefound.get());
-            cours.setNiveau(niveaufound.get());
-            cours.setTeacher(Enseignantfound.get());
+        Matiere matierefound = matiereRepository.findById(request.getIdmatiere())
+                .orElseThrow(() -> new EntityNotFoundException("No matiere found with ID:: " + request.getIdmatiere()));
+
+        Niveau niveaufound = niveauRepository.findById(request.getIdniveau())
+                .orElseThrow(() -> new EntityNotFoundException("No niveau found with ID:: " +request.getIdniveau()));
+
+
+        Enseignant Enseignantfound = enseignantRepository.findById(request.getIdenseignant())
+                .orElseThrow(() -> new EntityNotFoundException("No ensegnant found with ID:: " +request.getIdenseignant()));
+
+        //Optional<Niveau> niveaufound = niveauRepository.findById(request.getIdniveau());
+       // Optional<Enseignant> Enseignantfound = enseignantRepository.findById(request.getIdenseignant());
+
+
+       // if (matierefound.isPresent() && niveaufound.isPresent() && Enseignantfound.isPresent()) {
+            cours.setMatieres(matierefound);
+            cours.setNiveau(niveaufound);
+            cours.setTeacher(Enseignantfound);
 
             List<Tag_> tagtoadd;
             if (request.getTagid().isEmpty()) {
@@ -91,10 +104,10 @@ private final CoursRepository coursRepository;
             return CoursDto.FromEntity(coursSaved);
 
 
-        }
-        else {
-            throw new RuntimeException("Cours not found");
-        }
+      //  }
+      //  else {
+      //      throw new RuntimeException("Cours not found");
+      //  }
 
 
     }
