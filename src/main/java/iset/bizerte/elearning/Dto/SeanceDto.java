@@ -24,8 +24,8 @@ public class SeanceDto {
 
     public static Seance toEntity(SeanceDto seance) {
         return Seance.builder()
-                .titre(seance.titre)
-                .urlvideo(seance.urlvideo)
+                .titre(seance.getTitre())
+                .urlvideo(seance.getUrlvideo())
                 .build();
     }
 

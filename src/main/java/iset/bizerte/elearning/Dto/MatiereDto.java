@@ -17,8 +17,8 @@ public class MatiereDto {
 
     private Long id;
     private String libelle;
-
     private Long idensegnant;
+    private List<Long> idcours;
 
 
     public static Matiere toEntity(MatiereDto matiere) {
@@ -27,7 +27,6 @@ public class MatiereDto {
                 .id(matiere.getId())
                 .build();
     }
-
     public static MatiereDto FromEntity(Matiere matiere) {
         return MatiereDto.builder()
                 .libelle(matiere.getLibelle())

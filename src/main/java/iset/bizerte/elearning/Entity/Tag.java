@@ -16,7 +16,7 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @NoArgsConstructor
 @SuperBuilder
-public class Tag_ extends AbstractEntity{
+public class Tag extends AbstractEntity{
     private String libelle;
     private Boolean deleted;
 

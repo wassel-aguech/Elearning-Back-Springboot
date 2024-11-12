@@ -28,12 +28,15 @@ public class AbstractEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
     @CreatedDate
     @Column(name = "creationDate", nullable = false, updatable = false)
     private Instant creationDate;
+
     @LastModifiedDate
     @Column(name = "lastModifiedDate")
     private Instant lastModifiedDate;
+
     @Builder.Default
     private boolean deleted = false;
 

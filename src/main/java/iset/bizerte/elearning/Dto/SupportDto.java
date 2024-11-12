@@ -10,15 +10,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-
 public class SupportDto {
-
-
 
     private Boolean deleted;
     private Long ordre;
     private String name;
     private String paragraph;
+    private Long idseance;
 
 
     public static Support toEntity(SupportDto support) {
@@ -30,12 +28,6 @@ public class SupportDto {
                 .build();
 
     }
-
-
-
-
-
-
     public static SupportDto FromEntity(Support support) {
         return SupportDto.builder()
                 .ordre(support.getOrdre())

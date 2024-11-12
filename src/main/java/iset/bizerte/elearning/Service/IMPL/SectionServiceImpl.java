@@ -18,7 +18,6 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
-
 public class SectionServiceImpl implements SectionService{
 
     private final SectionRepository sectionRepository;
@@ -37,8 +36,6 @@ public class SectionServiceImpl implements SectionService{
         Optional<Section> section = sectionRepository.findById(id);
         if (section.isPresent()) {
             return SectionDto.FromEntity(section.get());
-
-
         } else {
             throw new RuntimeException("section not found");
         }
@@ -63,9 +60,6 @@ public class SectionServiceImpl implements SectionService{
         Optional<Section> section = sectionRepository.findById(id);
         if (section.isPresent()) {
             sectionRepository.deleteById(id);
-
-
-
         } else {
             throw new RuntimeException("Section not found");
         }

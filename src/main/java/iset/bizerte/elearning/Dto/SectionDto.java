@@ -11,7 +11,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-
 public class SectionDto {
 
     private String titre;
@@ -27,7 +26,6 @@ public class SectionDto {
                 .discription(sectionDto.getDiscription())
                 .build();
     }
-
     public static SectionDto FromEntity(Section sectionDto) {
         return SectionDto.builder()
                 .titre(sectionDto.getTitre())
@@ -37,6 +35,4 @@ public class SectionDto {
                                 .build();
 
     }
-
-
 }

@@ -1,8 +1,6 @@
 package iset.bizerte.elearning.Service.IMPL;
 
 import iset.bizerte.elearning.Dto.CoursDto;
-import iset.bizerte.elearning.Dto.NiveauDto;
-import iset.bizerte.elearning.Dto.PanierDto;
 import iset.bizerte.elearning.Entity.*;
 import iset.bizerte.elearning.Repository.*;
 import iset.bizerte.elearning.Service.CoursService;
@@ -76,13 +74,13 @@ private final CoursRepository coursRepository;
             cours.setNiveau(niveaufound);
             cours.setTeacher(Enseignantfound);
 
-            List<Tag_> tagtoadd;
+            List<Tag> tagtoadd;
             if (request.getTagid().isEmpty()) {
                 throw new IllegalArgumentException("you need to add a tag ");
             } else {
                 tagtoadd = new ArrayList<>();
                 for (Long Idmatieres : request.getTagid()) {
-                    Optional<Tag_> tagfound = tagRepository.findById(Idmatieres);
+                    Optional<Tag> tagfound = tagRepository.findById(Idmatieres);
                     tagfound.ifPresent(tagtoadd::add);
                 }
 
