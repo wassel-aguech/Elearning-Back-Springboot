@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 @Builder
 
 public class TagDto {
+    private Long id;
     private String libelle;
     private Boolean deleted;
     private Long idcours;
