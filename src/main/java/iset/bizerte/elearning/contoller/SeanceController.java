@@ -29,7 +29,8 @@ public class SeanceController {
     }
 
     @PostMapping("/save")
-    public SeanceDto save(@RequestBody SeanceDto request) {
+    public SeanceDto save(@RequestBody SeanceDto request)
+    {
         return seanceService.save(request);
     }
 

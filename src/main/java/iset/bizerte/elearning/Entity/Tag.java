@@ -18,7 +18,6 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 public class Tag extends AbstractEntity{
     private String libelle;
-    private Boolean deleted;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "cours_id")

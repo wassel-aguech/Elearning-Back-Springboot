@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 public class SupportDto {
+    private Long id;
 
     private Boolean deleted;
     private Long ordre;

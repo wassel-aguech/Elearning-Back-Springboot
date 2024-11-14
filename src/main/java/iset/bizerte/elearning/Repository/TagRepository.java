@@ -13,5 +13,5 @@ public interface TagRepository extends JpaRepository<Tag, Long> {
 
 
     @Query("SELECT m FROM Tag m WHERE m.libelle LIKE %?1%")
-    List<Section> searchByObjetStartsWith(String kye);
+    List<Tag> searchByObjetStartsWith(String kye);
 }

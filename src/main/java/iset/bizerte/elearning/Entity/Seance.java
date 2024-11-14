@@ -18,7 +18,7 @@ import java.util.Set;
 @SuperBuilder
 public class Seance extends AbstractEntity{
     private String titre;
-    private String urlvideo;
+   // private String urlvideo;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "section_id")

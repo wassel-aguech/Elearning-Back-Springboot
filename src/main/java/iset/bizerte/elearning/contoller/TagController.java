@@ -31,8 +31,8 @@ public class TagController {
     }
 
     @PostMapping("/save")
-    public TagDto save(@RequestBody   TagDto request) {
-        return tagService.save(request);
+    public TagDto save(@RequestBody   TagDto tagDto) {
+        return tagService.save(tagDto);
     }
 
     @DeleteMapping("/delete/{id}")

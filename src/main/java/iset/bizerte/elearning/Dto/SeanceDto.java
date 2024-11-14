@@ -16,24 +16,23 @@ import lombok.experimental.SuperBuilder;
 
 public class SeanceDto {
 
-
+    private Long id;
     private String titre;
-    private String urlvideo;
     private Long idsection;
 
 
     public static Seance toEntity(SeanceDto seance) {
         return Seance.builder()
+                .id(seance.getId())
                 .titre(seance.getTitre())
-                .urlvideo(seance.getUrlvideo())
                 .build();
     }
 
     public static SeanceDto FromEntity(Seance seance) {
         return SeanceDto.builder()
+                .id(seance.getId())
                 .titre(seance.getTitre())
-                .urlvideo(seance.getUrlvideo())
-                //.idsection(seance.getSection().getId())
+              //  .idsection(seance.getSection().getId())
                 .build();
 
     }

@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 public class SectionDto {
+    private Long id;
 
     private String titre;
     private Long ordre;
@@ -28,10 +29,11 @@ public class SectionDto {
     }
     public static SectionDto FromEntity(Section sectionDto) {
         return SectionDto.builder()
+                .id(sectionDto.getId())
                 .titre(sectionDto.getTitre())
                 .ordre(sectionDto.getOrdre())
                 .discription(sectionDto.getDiscription())
-                .idcours(sectionDto.getCours().getId())
+             //   .idcours(sectionDto.getCours().getId())
                                 .build();
 
     }

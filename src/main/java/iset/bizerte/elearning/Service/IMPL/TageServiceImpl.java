@@ -70,11 +70,11 @@ public class TageServiceImpl implements TagService {
 
     @Override
     public List<TagDto> findbyobjet(String kye) {
-      /*  return tagRepository.searchByObjetStartsWith(kye)
+        return tagRepository.searchByObjetStartsWith(kye)
                 .stream()
                 .map(TagDto::FromEntity)
-                .collect(Collectors.toList());*/
-        return null;
+                .collect(Collectors.toList());
+
     }
 
     @Override
