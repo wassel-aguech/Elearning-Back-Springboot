@@ -11,29 +11,28 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 public class SupportDto {
-    private Long id;
 
-    private Boolean deleted;
+    private Long id;
     private Long ordre;
     private String name;
-    private String paragraph;
+    private String urlSupport;
     private Long idseance;
 
 
     public static Support toEntity(SupportDto support) {
         return Support.builder()
-                .deleted(support.getDeleted())
                 .ordre(support.getOrdre())
                 .name(support.getName())
-                .paragraph(support.getParagraph())
+                .urlSupport(support.getUrlSupport())
                 .build();
 
     }
     public static SupportDto FromEntity(Support support) {
         return SupportDto.builder()
+                .id(support.getId())
                 .ordre(support.getOrdre())
                 .name(support.getName())
-                .paragraph(support.getParagraph())
+                .urlSupport(support.getUrlSupport())
                 .build();
 
     }

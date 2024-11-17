@@ -21,7 +21,7 @@ public class Support extends AbstractEntity{
 
     private Long ordre;
     private String name;
-    private String paragraph;
+    private String urlSupport;
 
 
     @ManyToOne(fetch = FetchType.LAZY)
